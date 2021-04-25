@@ -53,21 +53,19 @@ void insertion_sort(int array[], int size) {
 
 void selection_sort(int array[], int size) {
     int i, j, smallest_idx; // Indices
-    int current, smallest; // Values from the array
+    int switcher; // Values from the array
 
     for (i = 0; i < size - 1; ++i) {
-        current = array[i];
-        smallest = current;
         smallest_idx = i;
 
         for (j = i + 1; j < size; ++j) {
-            if (array[j] < smallest) {
-                smallest = array[j];
+            if (array[j] < array[smallest_idx]) {
                 smallest_idx = j;
             }
         }
 
-        array[i] = smallest;
-        array[smallest_idx] = current;
+        switcher = array[smallest_idx];
+        array[smallest_idx] = array[i];
+        array[i] = switcher;
     }
 }
