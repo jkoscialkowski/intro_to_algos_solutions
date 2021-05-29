@@ -1,4 +1,5 @@
 #include "sorts.h"
+#include "../utils.h"
 
 int main() {
     int is_array[9] = {12, 51, 123, 51, 23, 67, 86, 19, 321};
